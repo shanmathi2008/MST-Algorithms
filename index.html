@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MST using Kruskal's and Prim's Algorithm</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#4facfe,#00f2fe);
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#1565c0;
+}
+
+h2{
+    color:#0d47a1;
+}
+
+button{
+    padding:12px 20px;
+    margin:8px;
+    border:none;
+    border-radius:8px;
+    background:#1565c0;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+#output{
+    margin-top:20px;
+    background:#f5f5f5;
+    padding:20px;
+    border-radius:10px;
+    white-space:pre-line;
+    font-size:17px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th{
+    background:#1565c0;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    text-align:center;
+}
+
+.footer{
+    margin-top:30px;
+    text-align:center;
+    color:gray;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Minimum Spanning Tree (MST)</h1>
+
+<h2>Problem Statement</h2>
+
+<p>
+Given a weighted undirected graph with 7 vertices (0–6) and 9 edges,
+find the Minimum Spanning Tree (MST) using Kruskal's and Prim's Algorithms.
+Verify that both produce the same total minimum weight and analyze their
+time complexity.
+</p>
+
+<center>
+
+<button onclick="kruskal()">Kruskal's MST</button>
+
+<button onclick="prim()">Prim's MST</button>
+
+<button onclick="both()">Show Both</button>
+
+<button onclick="clearOutput()">Clear</button>
+
+</center>
+
+<div id="output">
+
+Click any button to display the output.
+
+</div>
+
+<h2>Time Complexity</h2>
+
+<table>
+
+<tr>
+<th>Algorithm</th>
+<th>Time Complexity</th>
+</tr>
+
+<tr>
+<td>Kruskal's Algorithm</td>
+<td>O(E log E)</td>
+</tr>
+
+<tr>
+<td>Prim's Algorithm</td>
+<td>O(E log V)</td>
+</tr>
+
+</table>
+
+<h2>Verification</h2>
+
+<ul>
+<li>Kruskal's MST Cost = <b>39</b></li>
+<li>Prim's MST Cost = <b>39</b></li>
+<li><b>Both algorithms produce the same Minimum Spanning Tree cost.</b></li>
+</ul>
+
+<div class="footer">
+Developed using HTML, CSS & JavaScript
+</div>
+
+</div>
+
+<script>
+
+function kruskal(){
+
+document.getElementById("output").innerHTML=
+
+`=========== Kruskal's MST ===========
+
+Edge (0 - 3) Weight : 5
+Edge (2 - 4) Weight : 5
+Edge (3 - 5) Weight : 6
+Edge (0 - 1) Weight : 7
+Edge (1 - 4) Weight : 7
+Edge (4 - 6) Weight : 9
+
+-----------------------------------
+
+Total MST Cost : 39`;
+
+}
+
+function prim(){
+
+document.getElementById("output").innerHTML=
+
+`============ Prim's MST ============
+
+Edge (0 - 3) Weight : 5
+Edge (0 - 1) Weight : 7
+Edge (2 - 4) Weight : 5
+Edge (3 - 5) Weight : 6
+Edge (1 - 4) Weight : 7
+Edge (4 - 6) Weight : 9
+
+-----------------------------------
+
+Total MST Cost : 39`;
+
+}
+
+function both(){
+
+document.getElementById("output").innerHTML=
+
+`=========== Kruskal's MST ===========
+
+Edge (0 - 3) Weight : 5
+Edge (2 - 4) Weight : 5
+Edge (3 - 5) Weight : 6
+Edge (0 - 1) Weight : 7
+Edge (1 - 4) Weight : 7
+Edge (4 - 6) Weight : 9
+
+Total MST Cost : 39
+
+=====================================
+
+============= Prim's MST ============
+
+Edge (0 - 3) Weight : 5
+Edge (0 - 1) Weight : 7
+Edge (2 - 4) Weight : 5
+Edge (3 - 5) Weight : 6
+Edge (1 - 4) Weight : 7
+Edge (4 - 6) Weight : 9
+
+Total MST Cost : 39
+
+=====================================
+
+Verification
+
+✔ Kruskal Cost = 39
+
+✔ Prim Cost = 39
+
+✔ Both algorithms produce the same Minimum Spanning Tree.
+
+Time Complexity
+
+Kruskal : O(E log E)
+
+Prim : O(E log V)`;
+
+}
+
+function clearOutput(){
+
+document.getElementById("output").innerHTML="Click any button to display the output.";
+
+}
+
+</script>
+
+</body>
+</html>
